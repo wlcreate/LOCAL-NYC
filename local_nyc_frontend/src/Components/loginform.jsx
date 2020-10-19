@@ -15,19 +15,23 @@ class LogInForm extends React.Component {
 
         handleSubmit = (evt) => {
             evt.preventDefault()
-            let {username, password} = evt.target
+            let {username, password} = this.state
             fetch("http://localhost:3000/users/login",{
                 method: "POST",
                 headers: {
                     "Content-type": "Application/json"
                 },
-                body: JSON.stringify(
-                    {username},
-                    {password}
+                body: JSON.stringify({
+                    username,
+                    password
+                }
                 )
             })
             .then (resp => resp.json())
-            .then (res => this.props.helpHandleResponse(res))
+            .then (res => {
+                this.props.helpHandleResponse(res)
+            })
+                
         }
 
     render() {

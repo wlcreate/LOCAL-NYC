@@ -14,7 +14,12 @@ class App extends React.Component {
         recommendations: "",
         token: "",
       }
-
+      renderForm = (routerProps) => {
+        if (routerProps.location.pathname === "/login")
+        {
+          return <LogInForm helpHandleResponse={this.helpHandleResponse}/>
+        }
+      }
       helpHandleResponse = (res) => {
         if (res.error) {
           console.error(res.error)
@@ -40,7 +45,7 @@ class App extends React.Component {
         </header>
         <Switch> 
           <Route path="/" exact component={Home}/>
-          <Route path="/login" component={LogInForm}/>
+          <Route path="/login" render={this.renderForm}/>
           <Route path="/register" render={this.renderRegisterForm}/>
           <Route path="/profile" render={this.renderProfile}/>
         </Switch>
