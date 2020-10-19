@@ -6,14 +6,35 @@ import {Switch, Route, withRouter, Redirect} from 'react-router-dom';
 import LogInForm from './Components/loginform.jsx';
 import Home from './Components/home.jsx';
 import RegistrationForm from './Components/registrationform.jsx';
+import ProfileContainer from './Components/profilerecommendations.jsx';
+
+// ? How do we clean up this mess?
+// import {Header, Navbar, Home, LogInForm, RegistrationForm, Profile} from '../Components/'
 
 class App extends React.Component {
 
       state = {
         id: 0,
-        username: "",
-        recommendations: "",
+        user: {},
+        recommendations: [],
         token: "",
+      }
+
+      componentDidMount(){
+        if(localStorage.token){
+          // Any time that you want to CRUD user information, send the token to the backend
+    
+          // Any time that you send the token to the backend, the controller action needs a:
+            // before_action :authorized
+          fetch("http://localhost:3000/users/keep_logged_in", {
+            method: "GET",
+            headers: {
+              "Authorization": localStorage.token
+            }
+          })
+            .then(res => res.json())
+            .then(this.helpHandleResponse)
+        }
       }
 
       renderForm = (routerProps) => {
@@ -22,24 +43,37 @@ class App extends React.Component {
           return <LogInForm helpHandleResponse={this.helpHandleResponse}/>
         } else if (routerProps.location.pathname === "/register") {
           return <RegistrationForm helpHandleResponse={this.helpHandleResponse} />
-        }
+        } 
       }
 
       helpHandleResponse = (res) => {
         if (res.error) {
-          console.error(res.error)
+          console.error(res.error) // show the user the error eventually
         }
         else {
           localStorage.token = res.token
           this.setState({
             id: res.user.id,
-            username: res.user.username,
+            user: res.user,
             recommendations: res.user.recommendations,
             token: res.token 
           })
           this.props.history.push("/profile")
         }
       }
+
+      renderProfile = (routerProps) => {
+        if (this.state.token) {
+          return <ProfileContainer
+            user={this.state.user} 
+            recommendations={this.state.recommendations}
+            token={this.state.token}
+          />
+        } else {
+          return <Redirect to="/login" />
+        }
+      }
+      
 
   render() {
     return (
@@ -59,4 +93,5 @@ class App extends React.Component {
   }
 }
 
-export default App;
+let magicalComponent = withRouter(App)
+export default magicalComponent
