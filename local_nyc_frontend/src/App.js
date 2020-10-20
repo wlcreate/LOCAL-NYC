@@ -6,17 +6,17 @@ import {Switch, Route, withRouter, Redirect} from 'react-router-dom';
 import LogInForm from './Components/loginform.jsx';
 import Home from './Components/home.jsx';
 import RegistrationForm from './Components/registrationform.jsx';
-import ProfileContainer from './Components/profilerecommendations.jsx';
+import ProfileContainer from './Components/Profile/profileContainer.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css'; // for the profileModal
 
 // ? How do we clean up this mess?
-// import {Header, Navbar, Home, LogInForm, RegistrationForm, Profile} from '../Components/'
+// import {Header, Navbar, Home, LogInForm, RegistrationForm} from '../Components/'
 
 class App extends React.Component {
 
       state = {
         id: 0,
         user: {},
-        recommendations: [],
         token: "",
       }
 
@@ -38,8 +38,7 @@ class App extends React.Component {
       }
 
       renderForm = (routerProps) => {
-        if (routerProps.location.pathname === "/login")
-        {
+        if (routerProps.location.pathname === "/login"){
           return <LogInForm helpHandleResponse={this.helpHandleResponse}/>
         } else if (routerProps.location.pathname === "/register") {
           return <RegistrationForm helpHandleResponse={this.helpHandleResponse} />
@@ -55,7 +54,6 @@ class App extends React.Component {
           this.setState({
             id: res.user.id,
             user: res.user,
-            recommendations: res.user.recommendations,
             token: res.token 
           })
           this.props.history.push("/profile")
@@ -66,7 +64,6 @@ class App extends React.Component {
         if (this.state.token) {
           return <ProfileContainer
             user={this.state.user} 
-            recommendations={this.state.recommendations}
             token={this.state.token}
           />
         } else {
