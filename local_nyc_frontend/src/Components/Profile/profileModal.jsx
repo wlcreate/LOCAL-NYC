@@ -17,6 +17,7 @@ function ProfileModal(props) {
     let handleClose = () => setShow(false)
     let handleShow = () => setShow(true)
 
+    // ! we stopped here in sending a request to the backend; need to check out response
     let handleSubmit = (evt) => {
         evt.preventDefault()
         let {username, first_name, last_name, bio} = this.state

@@ -7,6 +7,8 @@ import LogInForm from './Components/loginform.jsx';
 import Home from './Components/home.jsx';
 import RegistrationForm from './Components/registrationform.jsx';
 import ProfileContainer from './Components/Profile/profileContainer.jsx';
+import NeighborhoodContainer from './Components/Neighborhood/NeighborhoodContainer.jsx';
+import SpotsContainer from './Components/Spots/SpotsContainer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css'; // for the profileModal
 
 // ? How do we clean up this mess?
@@ -18,6 +20,7 @@ class App extends React.Component {
         id: 0,
         user: {},
         token: "",
+        neighborhood_id: ""
       }
 
       componentDidMount(){
@@ -71,6 +74,35 @@ class App extends React.Component {
         }
       }
       
+      renderNeighborhoods = (routerProps) => {
+        if (this.state.token) {
+          return <NeighborhoodContainer
+            user={this.state.user} 
+            token={this.state.token}
+            changeNeighborhoodID={this.changeNeighborhoodID}
+          />
+        } else {
+          return <Redirect to="/login" />
+        }
+      }
+
+      changeNeighborhoodID = (chosenNeighborhood) => {
+        this.setState({
+          neighborhood_id: chosenNeighborhood
+        })
+      }
+
+      renderSpots = (routerProps) => {
+        if (this.state.token) {
+          return <SpotsContainer
+            user={this.state.user} 
+            token={this.state.token}
+            neighborhood_id={this.state.neighborhood_id}
+          />
+        } else {
+          return <Redirect to="/login" />
+        }
+      }
 
   render() {
     return (
@@ -84,6 +116,9 @@ class App extends React.Component {
           <Route path="/login" render={this.renderForm}/>
           <Route path="/register" render={this.renderForm}/>
           <Route path="/profile" render={this.renderProfile}/>
+          <Route path="/neighborhoods" render={this.renderNeighborhoods}/> 
+          <Route path="/neighborhoods/:id/spots" render={this.renderSpots}/> 
+          <Route render={ () => <p>Page not Found</p> } />
         </Switch>
       </div>
     );
