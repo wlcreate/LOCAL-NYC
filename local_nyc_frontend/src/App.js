@@ -9,6 +9,7 @@ import RegistrationForm from './Components/registrationform.jsx';
 import ProfileContainer from './Components/Profile/profileContainer.jsx';
 import NeighborhoodContainer from './Components/Neighborhood/NeighborhoodContainer.jsx';
 import SpotsContainer from './Components/Spots/SpotsContainer.jsx';
+import Spot from './Components/Spot/Spot.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css'; // for the profileModal
 
 // ? How do we clean up this mess?
@@ -17,10 +18,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // for the profileModal
 class App extends React.Component {
 
       state = {
-        id: 0,
         user: {},
         token: "",
-        neighborhood_id: ""
+        neighborhood_id: "",
+        spot_id: ""
       }
 
       componentDidMount(){
@@ -98,6 +99,26 @@ class App extends React.Component {
             user={this.state.user} 
             token={this.state.token}
             neighborhood_id={this.state.neighborhood_id}
+            changeSpotID={this.changeSpotID}
+          />
+        } else {
+          return <Redirect to="/login" />
+        }
+      }
+
+      changeSpotID = (chosenSpot) => {
+        this.setState({
+          spot_id: chosenSpot
+        })
+      }
+
+      renderSpot = (routerProps) => {
+        if (this.state.token) {
+          return <Spot
+            user={this.state.user} 
+            token={this.state.token}
+            neighborhood_id={this.state.neighborhood_id}
+            changeSpotID={this.changeSpotID}
           />
         } else {
           return <Redirect to="/login" />
@@ -116,8 +137,9 @@ class App extends React.Component {
           <Route path="/login" render={this.renderForm}/>
           <Route path="/register" render={this.renderForm}/>
           <Route path="/profile" render={this.renderProfile}/>
-          <Route path="/neighborhoods" render={this.renderNeighborhoods}/> 
-          <Route path="/neighborhoods/:id/spots" render={this.renderSpots}/> 
+          <Route path="/neighborhoods" exact render={this.renderNeighborhoods}/> 
+          <Route path="/neighborhoods/:id/spots" exact render={this.renderSpots}/> 
+          <Route path="/neighborhoods/:id/spots/:id" exact render={this.renderSpot}/>
           <Route render={ () => <p>Page not Found</p> } />
         </Switch>
       </div>

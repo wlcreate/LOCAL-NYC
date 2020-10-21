@@ -1,5 +1,5 @@
 import React from 'react';
-import Spot from './Spot.jsx';
+import SpotCard from './SpotCard.jsx';
 
 class SpotsContainer extends React.Component{
 
@@ -25,9 +25,11 @@ class SpotsContainer extends React.Component{
     render(){
 
         let arrayOfComponents = this.state.spots.map(spotObj => {
-            return <Spot
+            return <SpotCard
                 key={spotObj.id}
                 spot={spotObj}
+                neighborhood_id={this.props.neighborhood_id}
+                changeSpotID={this.props.changeSpotID}
             />
         })
 
