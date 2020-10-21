@@ -9,7 +9,7 @@ import RegistrationForm from './Components/registrationform.jsx';
 import ProfileContainer from './Components/Profile/profileContainer.jsx';
 import NeighborhoodContainer from './Components/Neighborhood/NeighborhoodContainer.jsx';
 import SpotsContainer from './Components/Spots/SpotsContainer.jsx';
-import Spot from './Components/Spot/Spot.jsx';
+import SpotContainer from './Components/Spot/SpotContainer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css'; // for the profileModal
 
 // ? How do we clean up this mess?
@@ -114,11 +114,11 @@ class App extends React.Component {
 
       renderSpot = (routerProps) => {
         if (this.state.token) {
-          return <Spot
+          return <SpotContainer
             user={this.state.user} 
             token={this.state.token}
             neighborhood_id={this.state.neighborhood_id}
-            changeSpotID={this.changeSpotID}
+            spot_id={this.state.spot_id}
           />
         } else {
           return <Redirect to="/login" />
