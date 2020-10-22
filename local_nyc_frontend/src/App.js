@@ -2,9 +2,10 @@ import React from 'react';
 import './App.css';
 import Header from './Components/header.jsx';
 import Navbar from './Components/navbar.jsx';
+import NewNavBar from './Components/NewNavBar.jsx';
 import {Switch, Route, withRouter, Redirect} from 'react-router-dom';
 import LogInForm from './Components/loginform.jsx';
-import Home from './Components/home.jsx';
+import Home from './Components/Home/home.jsx';
 import RegistrationForm from './Components/registrationform.jsx';
 import ProfileContainer from './Components/Profile/profileContainer.jsx';
 import NeighborhoodContainer from './Components/Neighborhood/NeighborhoodContainer.jsx';
@@ -157,6 +158,7 @@ class App extends React.Component {
         <header className="App-header"> 
         <Header />
         <Navbar token={this.state.token} handleLogOut={this.handleLogOut}/>
+        <NewNavBar />
         </header>
         <Switch> 
           <Route path="/" exact component={Home}/>
