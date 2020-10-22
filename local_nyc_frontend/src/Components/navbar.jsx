@@ -6,7 +6,7 @@ const Navbar = (props) => {
     let handleClick = () => {
         props.handleLogOut()
     }
-    
+
     return (
         <div>
             {
@@ -28,16 +28,16 @@ const Navbar = (props) => {
                 </ul>
                 :
                 <ul className="nav">
-                <li>
-                    <NavLink to="/">Home</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/login">Log In</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/register">Register</NavLink>
-                </li>
-            </ul>
+                    <li>
+                        <NavLink to="/">Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/login">Log In</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/register">Register</NavLink>
+                    </li>
+                </ul>
             }
             {/* <ul className="nav">
                 <li>
