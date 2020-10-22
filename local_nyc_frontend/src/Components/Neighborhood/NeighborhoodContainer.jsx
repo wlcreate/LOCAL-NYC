@@ -1,5 +1,7 @@
 import React from 'react';
 import Neighborhood from './Neighborhood.jsx';
+import {Bronx} from './photos/bronx.jpg';
+
 
 class NeighborhoodContainer extends React.Component{
 
@@ -42,6 +44,7 @@ class NeighborhoodContainer extends React.Component{
             <div>
                 <h1>These are the neighborhoods</h1>
                 <h2>Bronx</h2>
+                <img src={Bronx} alt="bronx"/>
                 {BronxNeighborhoods}
                 <h2>Brooklyn</h2>
                 {BrooklynNeighborhoods}
