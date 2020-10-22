@@ -10,6 +10,7 @@ import ProfileContainer from './Components/Profile/profileContainer.jsx';
 import NeighborhoodContainer from './Components/Neighborhood/NeighborhoodContainer.jsx';
 import Spots from './Components/Spots/Spots.jsx';
 import SpotContainer from './Components/Spot/SpotContainer.jsx';
+import Alert from 'react-bootstrap/Alert'; // for the login/registration errors
 import 'bootstrap/dist/css/bootstrap.min.css'; // for the profileModal
 
 // ? How do we clean up this mess?
@@ -21,7 +22,8 @@ class App extends React.Component {
         user: {},
         token: "",
         neighborhood_id: "",
-        spot_id: ""
+        spot_id: "",
+        error: false
       }
 
       componentDidMount(){
@@ -68,6 +70,10 @@ class App extends React.Component {
       helpHandleResponse = (res) => {
         if (res.error) {
           console.error(res.error) // show the user the error eventually
+          // ! WE NEED TO PUT THIS BELOW && HAVE A TOGGLE THING IN STATE
+          // return <Alert variant='danger'>
+          //   res.error
+          // </Alert>
         }
         else {
           localStorage.token = res.token
