@@ -141,12 +141,22 @@ class App extends React.Component {
         }
       }
 
+      handleLogOut = () => {
+        this.setState({
+          user: {},
+          token: "",
+          neighborhood_id: "",
+          spot_id: ""
+        })
+        localStorage.clear()
+      }
+
   render() {
     return (
       <div className="App">
         <header className="App-header"> 
         <Header />
-        <Navbar />
+        <Navbar token={this.state.token} handleLogOut={this.handleLogOut}/>
         </header>
         <Switch> 
           <Route path="/" exact component={Home}/>
