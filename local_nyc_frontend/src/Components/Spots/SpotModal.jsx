@@ -60,7 +60,6 @@ function SpotModal(props) {
                         <option value={"Live Music Venue"}>Live Music Venue</option>
                         <option value={"Museum"}>Museum</option>
                         <option value={"Observation Deck"}>Observation Deck</option>
-                        <option value={"Live Music Venue"}>Live Music Venue</option>
                         <option value={"Park"}>Park</option>
                         <option value={"Performing Arts Venue"}>Performing Arts Venue</option>
                         <option value={"Restaurant"}>Restaurant</option>

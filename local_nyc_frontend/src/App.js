@@ -8,7 +8,7 @@ import Home from './Components/home.jsx';
 import RegistrationForm from './Components/registrationform.jsx';
 import ProfileContainer from './Components/Profile/profileContainer.jsx';
 import NeighborhoodContainer from './Components/Neighborhood/NeighborhoodContainer.jsx';
-import SpotsContainer from './Components/Spots/SpotsContainer.jsx';
+import Spots from './Components/Spots/Spots.jsx';
 import SpotContainer from './Components/Spot/SpotContainer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css'; // for the profileModal
 
@@ -111,7 +111,7 @@ class App extends React.Component {
 
       renderSpots = (routerProps) => {
         if (this.state.token) {
-          return <SpotsContainer
+          return <Spots
             user={this.state.user} 
             token={this.state.token}
             neighborhood_id={this.state.neighborhood_id}
