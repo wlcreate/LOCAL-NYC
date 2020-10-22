@@ -39,6 +39,22 @@ class App extends React.Component {
             .then(res => res.json())
             .then(this.helpHandleResponse)
         }
+        // fetch(`http://localhost:3000/neighborhoods/${this.state.neighborhood_id}/spots/${this.state.spot_id}`, {
+        //         method: "GET",
+        //         headers: {
+        //             "Authorization": localStorage.token
+        //         }
+        //     })
+        //     .then(response => response.json())
+        //     .then(spot => {
+        //       return <SpotContainer
+        //       user={this.state.user} 
+        //       token={this.state.token}
+        //       neighborhood_id={this.state.neighborhood_id}
+        //       spot_id={this.state.spot_id}
+        //       spot={spot}
+        //       />
+        //     })
       }
 
       renderForm = (routerProps) => {
@@ -115,11 +131,11 @@ class App extends React.Component {
       renderSpot = (routerProps) => {
         if (this.state.token) {
           return <SpotContainer
-            user={this.state.user} 
-            token={this.state.token}
-            neighborhood_id={this.state.neighborhood_id}
-            spot_id={this.state.spot_id}
-          />
+          user={this.state.user} 
+          token={this.state.token}
+          neighborhood_id={this.state.neighborhood_id}
+          spot_id={this.state.spot_id}
+        />
         } else {
           return <Redirect to="/login" />
         }

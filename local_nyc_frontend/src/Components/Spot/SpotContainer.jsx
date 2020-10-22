@@ -1,10 +1,13 @@
 import React from 'react';
 import InfoContainer from './InfoContainer.jsx';
+import RecommendationModal from '../Recommendations/RecommendationModal.jsx';
+import SpotRecommendation from '../Recommendations/SpotRecommendation.jsx';
 
 class SpotContainer extends React.Component{
     
         state = {
-            spot: "",
+            spot: {},
+            recommendations: []
         }
 
     componentDidMount(){
@@ -15,28 +18,75 @@ class SpotContainer extends React.Component{
             }
         })
         .then(response => response.json())
-        .then(spotObj => {
+        .then(spot => {
+            // debugger
+            // console.log(spot)
             this.setState({
-                spot: spotObj
+                spot: spot
+            })
+        })
+        fetch(`http://localhost:3000/neighborhoods/${this.props.neighborhood_id}/spots/${this.props.spot_id}/recommendations`)
+        .then(res => res.json())
+        .then(arrayOfRec => {
+            console.log(arrayOfRec)
+            this.setState({
+                recommendations: arrayOfRec
             })
         })
     }
     
+    // handleInfo = () => {
+    //     if (this.state.spot){
+    //         let arrayOfStrings = this.state.spot.info.split(" /n ")
+    //         console.log(arrayOfStrings)
+    //         let listOfInfo = arrayOfStrings.map((singleSentence, index) => {
+    //             return <InfoContainer key={index} sentence={singleSentence}/>
+    //         })
+    //         return listOfInfo
+    //     }
+    // }
+
+    addRecommendationToState = (newRecommendation) => {
+        let copyOfRecs = [...this.state.recommendations, newRecommendation]
+        this.setState({
+            recommendations: copyOfRecs
+        })
+    }
+
+    deleteRecommendationFromState = (deletedObj) => {
+        let copyOfRecs = this.state.recommendations.filter(recommendationObj => {
+            return recommendationObj.id !== deletedObj.id
+          })
+          this.setState({
+            recommendations: copyOfRecs
+          })
+    }
+
     render(){
-        // let {name, address, info} = this.state.spot.spot
+        // debugger
+        
+        // console.log(this.state.spot)
+
+        let arrayOfRecComponents = this.state.recommendations.map(recommendationObj => {
+            return <SpotRecommendation
+                key={recommendationObj.id}
+                recommendation={recommendationObj}
+                deleteRecommendationFromState={this.deleteRecommendationFromState}
+            />
+        })
+
         return(
             <div>
-                {this.state.spot
-            ?
-            <div>
-                <h1>This is the Spot Component</h1>
-                <h2>{this.state.spot.spot.name}</h2>
-                <h3>{this.state.spot.spot.address}</h3>
-                <InfoContainer stringOfInfo={this.state.spot.spot.info}/>
-             </div>
-            :
-            null
-            }
+                {/* <h1>This is the Spot Component</h1> */}
+                <h2>{this.state.spot.name}</h2>
+                <h3>{this.state.spot.address}</h3>
+                <ul>
+                    {/* {this.handleInfo()} */}
+                </ul>
+                <h2>Recommendations</h2>
+                {arrayOfRecComponents}
+                {/* <RecommendationsContainer neighborhood_id={this.props.neighborhood_id} spot_id={this.props.spot_id} spot={this.state.spot}/> */}
+                <RecommendationModal user_id={this.props.user.id} spot_id={this.state.spot.id} addRecommendationToState={this.addRecommendationToState}/>
             </div>
         )
     }

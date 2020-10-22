@@ -8,20 +8,19 @@ function ProfileModal(props) {
     // sets the state for the Modal
     let [show, setShow] = useState(false)
 
-    // sets the state for the form
+    // sets the input state for the form
     let [username, setUsername] = useState("")
     let [first_name, setFirstName] = useState("")
     let [last_name, setLastName] = useState("")
     let [bio, setBio] = useState("")
+    let [password, setPassword] = useState("")
 
     let handleClose = () => setShow(false)
     let handleShow = () => setShow(true)
 
-    // ! we stopped here in sending a request to the backend; need to check out response
     let handleSubmit = (evt) => {
         evt.preventDefault()
-        let {username, first_name, last_name, bio} = this.state
-        fetch(`http://localhost:3000/users/${this.props.user.id}/`, {
+        fetch(`http://localhost:3000/users/${props.user.id}/`, {
             method: "PATCH",
             headers: {
                 "Authorization": localStorage.token,
@@ -31,13 +30,15 @@ function ProfileModal(props) {
                 username,
                 first_name,
                 last_name,
-                bio
+                bio,
+                password
             })
         })
         .then(response => response.json())
         .then(response => {
             console.log(response)
-            debugger
+            props.updateProfileInfo(response.user)
+            // debugger
         })
     }
 
@@ -81,13 +82,13 @@ function ProfileModal(props) {
                         onChange={e => {setBio(e.target.value)}}
                     />
                     <br></br>
-                    {/* <label htmlFor="password">Password</label>
+                    <label htmlFor="password">Password</label>
                     <input type="password" autoComplete="off"
                         name="password"
                         value={password}
-                        onChange={this.handleChange}
+                        onChange={e => {setPassword(e.target.value)}}
                     />
-                    <br></br> */}
+                    <br></br>
                     <input type="submit" value="Submit"/>
                 </form>
             </Modal.Body>
