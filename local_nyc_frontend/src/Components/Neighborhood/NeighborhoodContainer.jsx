@@ -1,6 +1,6 @@
 import React from 'react';
 import Neighborhood from './Neighborhood.jsx';
-import {Bronx} from './photos/bronx.jpg';
+import { Card } from 'semantic-ui-react'
 
 
 class NeighborhoodContainer extends React.Component{
@@ -41,19 +41,37 @@ class NeighborhoodContainer extends React.Component{
         let StatenIslandNeighborhoods = arrayOfComponents.slice(20, 25)
 
         return(
-            <div>
-                <h1>These are the neighborhoods</h1>
-                <h2>Bronx</h2>
-                <img src={Bronx} alt="bronx"/>
-                {BronxNeighborhoods}
-                <h2>Brooklyn</h2>
-                {BrooklynNeighborhoods}
-                <h2>Manhattan</h2>
-                {ManhattanNeighborhoods}
-                <h2>Queens</h2>
-                {QueensNeighborhoods}
-                <h2>Staten Island</h2>
-                {StatenIslandNeighborhoods}
+            <div className="neighborhoods">
+                {/* <h1>These are the neighborhoods</h1> */}
+                {/* <h2>Bronx</h2> */}
+                <img className="neighborhoods" src={require('./Banners/Bronx.png')}  alt="Bronx"/>
+                <div class="ui three cards">
+                    {BronxNeighborhoods}
+                </div>
+
+                {/* <h2>Brooklyn</h2> */}
+                <img className="neighborhoods" src={require('./Banners/Brooklyn.png')}  alt="Brooklyn"/>
+                <div class="ui three cards">
+                    {BrooklynNeighborhoods}
+                </div>
+                
+                {/* <h2>Manhattan</h2> */}
+                <img className="neighborhoods" src={require('./Banners/Manhattan.png')}  alt="Manhattan"/>
+                <div class="ui three cards">
+                    {ManhattanNeighborhoods}
+                </div>
+
+                {/* <h2>Queens</h2> */}
+                <img className="neighborhoods" src={require('./Banners/Queens.png')}  alt="Queens"/>
+                <div class="ui three cards">
+                    {QueensNeighborhoods}
+                </div>
+
+                {/* <h2>Staten Island</h2> */}
+                <img className="neighborhoods" src={require('./Banners/StatenIsland.png')}  alt="Staten Island"/>
+                <div class="ui three cards">
+                    {StatenIslandNeighborhoods}
+                </div>
             </div>
         )
     }
@@ -61,3 +79,9 @@ class NeighborhoodContainer extends React.Component{
 
 
 export default NeighborhoodContainer;
+
+{/* <div class="ui six cards">
+    <div class="ui raised card">
+        <div class="image">
+            <img src="/images/wireframe/image.png"/>
+             */}

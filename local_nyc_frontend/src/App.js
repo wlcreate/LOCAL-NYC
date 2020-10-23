@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Header from './Components/header.jsx';
+import Header from './Components/Home/Header.jsx';
 import Navbar from './Components/navbar.jsx';
 import NewNavBar from './Components/NewNavBar.jsx';
 import {Switch, Route, withRouter, Redirect} from 'react-router-dom';
 import LogInForm from './Components/loginform.jsx';
-import Home from './Components/Home/home.jsx';
+import Home from './Components/Home/Home.jsx';
 import RegistrationForm from './Components/registrationform.jsx';
 import ProfileContainer from './Components/Profile/profileContainer.jsx';
 import NeighborhoodContainer from './Components/Neighborhood/NeighborhoodContainer.jsx';
@@ -13,6 +13,7 @@ import Spots from './Components/Spots/Spots.jsx';
 import SpotContainer from './Components/Spot/SpotContainer.jsx';
 import Alert from 'react-bootstrap/Alert'; // for the login/registration errors
 import 'bootstrap/dist/css/bootstrap.min.css'; // for the profileModal
+import 'semantic-ui-css/semantic.min.css' // for the Cards
 
 // ? How do we clean up this mess?
 // import {Header, Navbar, Home, LogInForm, RegistrationForm} from '../Components/'
@@ -71,6 +72,7 @@ class App extends React.Component {
       helpHandleResponse = (res) => {
         if (res.error) {
           console.error(res.error) // show the user the error eventually
+          alert(res.error)
           // ! WE NEED TO PUT THIS BELOW && HAVE A TOGGLE THING IN STATE
           // return <Alert variant='danger'>
           //   res.error
@@ -162,9 +164,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header"> 
-        <Header />
         <Navbar token={this.state.token} handleLogOut={this.handleLogOut}/>
-        <NewNavBar />
         </header>
         <Switch> 
           <Route path="/" exact component={Home}/>

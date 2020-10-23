@@ -14,7 +14,7 @@ class SpotCard extends React.Component{
         let path = "/neighborhoods/" + neighborhood_id + "/spots/" + id 
 
         return(
-            <div>
+            <div class="ui raised card" id="spot">
                 <NavLink to={path} onClick={this.handleClick}>{name}</NavLink>
             </div>
         )

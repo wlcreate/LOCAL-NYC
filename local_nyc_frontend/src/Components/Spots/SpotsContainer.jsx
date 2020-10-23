@@ -14,7 +14,7 @@ class SpotsContainer extends React.Component{
         })
 
         return(
-            <div>
+            <div class="ui three cards">
                 {arrayOfComponents}
             </div>
         )

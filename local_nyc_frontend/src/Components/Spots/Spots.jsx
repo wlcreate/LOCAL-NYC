@@ -171,10 +171,18 @@ class Spots extends React.Component{
 
         return(
             <div>
-                <h1>{this.state.neighborhood}</h1>
-                <SpotsSearch searchTerm={this.state.searchTerm} changeSearchTerm={this.changeSearchTerm}/>
-                <CategoryFilter selectedCategory={this.state.selectedCategory} changeSelectedCategory={this.changeSelectedCategory}/>
-                <SpotsContainer spots={this.findSpots()} changeSpotID={this.props.changeSpotID}/>
+                <h1 id="spotName">{this.state.neighborhood}</h1>
+                <div id="spot-container">
+                    <div id="spot-search">
+                        <SpotsSearch searchTerm={this.state.searchTerm} changeSearchTerm={this.changeSearchTerm}/>
+                    </div>
+                    <div id="category-filter">
+                        <CategoryFilter selectedCategory={this.state.selectedCategory} changeSelectedCategory={this.changeSelectedCategory}/>
+                    </div>
+                </div>
+                <div>
+                    <SpotsContainer spots={this.findSpots()} changeSpotID={this.props.changeSpotID}/>
+                </div>
                 <SpotModal neighborhood_id={this.props.neighborhood_id} addSpotToState={this.addSpotToState}/>
             </div>
         )

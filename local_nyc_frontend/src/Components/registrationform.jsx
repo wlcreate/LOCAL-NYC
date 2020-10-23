@@ -39,8 +39,8 @@ class RegistrationForm extends React.Component {
     render(){
         let {first_name, last_name, username, password} = this.state
         return(
-            <form onSubmit={this.handleSubmit}>
-                <h1>Registration Form</h1>
+            <form class="home" onSubmit={this.handleSubmit}>
+                <h1 class="home form name">Registration Form</h1>
                 <label htmlFor="first_name">First Name</label>
                 <input type="text" autoComplete="off" 
                     name="first_name"
@@ -49,27 +49,27 @@ class RegistrationForm extends React.Component {
                 />
                 <br></br>
                 <label htmlFor="last_name">Last Name</label>
-                <input type="text" autoComplete="off" 
+                <input class="home input" type="text" autoComplete="off" 
                     name="last_name"
                     value={last_name}
                     onChange={this.handleChange}
                 />
                 <br></br>
                 <label htmlFor="username">Username</label>
-               <input type="text" autoComplete="off"
+               <input class="home input" type="text" autoComplete="off"
                     name="username"
                     value={username}
                     onChange={this.handleChange}
                 />
                 <br></br>
                 <label htmlFor="password">Password</label>
-               <input type="password" autoComplete="off"
+               <input class="home input" type="password" autoComplete="off"
                     name="password"
                     value={password}
                     onChange={this.handleChange}
                 />
                 <br></br>
-                <input type="submit" value="Submit"/>
+                <input class="home submit" type="submit" value="Submit"/>
             </form>
         )
     }

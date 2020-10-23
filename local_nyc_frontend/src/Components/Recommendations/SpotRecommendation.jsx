@@ -21,7 +21,9 @@ class SpotRecommendation extends React.Component{
             <div>
                 <p>{context}</p>
                 <p>User: {username}</p>
-                <button onClick={this.handleClick}>Delete</button>
+                <div id="delete-recommendation">
+                    <button class="ui red button" onClick={this.handleClick}>Delete</button>
+                </div>
             </div>
         )
     }

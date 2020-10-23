@@ -1,12 +1,14 @@
 import React from 'react';
-import HomeCarousel from './Carousel.jsx';
+import Header from './Header.jsx';
+import HomeCarousel from './HomeCarousel.jsx';
 
 
 class Home extends React.Component {
     render(){
         return(
             <div>
-                "Hello"
+                <Header />
+                {/* <img id="home-image" src={require('./Home_Image.png')}  alt="Home Image"/> */}
                 <HomeCarousel />
             </div>
             

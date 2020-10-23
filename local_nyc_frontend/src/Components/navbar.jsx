@@ -13,6 +13,9 @@ const Navbar = (props) => {
                 props.token
                 ?
                 <ul className="nav">
+                    <li id="logo">
+                        <p>LOCAL NYC</p>
+                    </li>
                     <li>
                         <NavLink to="/">Home</NavLink>
                     </li>
@@ -28,6 +31,9 @@ const Navbar = (props) => {
                 </ul>
                 :
                 <ul className="nav">
+                    <li>
+                        <p>LOCAL NYC</p>
+                    </li>
                     <li>
                         <NavLink to="/">Home</NavLink>
                     </li>
