@@ -57,7 +57,7 @@ npm start
  * React Router
  
  ## Build Status
- * This project was completed for the purpose of the project presentation deadline.
+ * This project was completed in 5 days for the purpose of the project presentation.
  
  ## Contributors
  * [Bella Evalle](https://github.com/BellaEvalle)
