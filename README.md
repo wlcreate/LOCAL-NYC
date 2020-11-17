@@ -7,9 +7,15 @@ LOCAL NYC is a web application that allows locals from NYC to share and explore 
 1. Clone down the [Rails backend](https://github.com/wlcreate/Mod4_Project_backend) --git clone
 2. Clone down this repo into local machine --git clone
 3. cd into the directory
-4. 'npm install' to install all dependencies
+4. Install all dependencies
+```
+npm install
+```
 5. Start the Rails server
-6. Open up a new terminal and 'npm start' to run this app
+6. Open up a new terminal and run this app
+```
+npm start
+```
 
 ## Features
 
