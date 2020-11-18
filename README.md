@@ -37,7 +37,7 @@ npm start
  * see all of the recommendations for a spot
  
  ### Active Record Associations
- * There are 5 models that have the following associations ```has_many, belongs_to and has_many, through: ```
+ * There are 5 models that have the following associations ```has_many```, ```belongs_to``` and ```has_many, through: ```
  
  ## Domain Model
  <img src='./local_nyc_frontend/image/domainImg.jpg' />
