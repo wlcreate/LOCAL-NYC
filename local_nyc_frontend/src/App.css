@@ -163,8 +163,14 @@ img.neighborhoods {
   background-color: #24699C;
 }
 
+/* neighborhood name */
 .center.aligned.header {
   font-size: medium;
+  color: #19283E;
+}
+
+.center.aligned.header:hover {
+  color: white;
 }
 
 /* Spots Container */
