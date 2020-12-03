@@ -26,11 +26,13 @@ class ProfileContainer extends React.Component{
         let {full_name, username, bio} = this.state
         return(
             <div id="profile-page">
-                <h1>{username}</h1>
-                <p>{full_name}</p>
-                <p>{bio}</p>
+                <div id="profile-info">
+                    <h2>{full_name}</h2>
+                    <p>Username: {username}</p>
+                    <p>About me: {bio}</p>
+                    <ProfileModal user={this.props.user} updateProfileInfo={this.updateProfileInfo}/>
+                </div>
                 {/* <button onClick={this.handleClick}>Edit My Profile</button> */}
-                <ProfileModal user={this.props.user} updateProfileInfo={this.updateProfileInfo}/>
                 <ProfileRecommendationsContainer
                     user={this.props.user}
                     token={this.props.token}

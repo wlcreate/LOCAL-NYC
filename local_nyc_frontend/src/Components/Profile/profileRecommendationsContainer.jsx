@@ -32,8 +32,8 @@ class ProfileRecommendationsContainer extends React.Component{
         })
 
         return(
-            <div>
-                <h2>Recommendations</h2>
+            <div id="profile-recommendations">
+                <h2 id="profile-recommendation-h2">My Recommendations</h2>
                 {arrayOfComponents}
             </div>
         )
