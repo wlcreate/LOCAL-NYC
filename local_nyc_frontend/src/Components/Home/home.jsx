@@ -14,8 +14,8 @@ class Home extends React.Component {
                     <h2>About Us</h2>
                     <h3>Wanna know where the locals go?</h3>
                     <p>So do we! The creators of this app currently live in NYC and are always ready to explore their home. But as many know, NYC is a HUGE city that is constantly changing. Like other locals, we don't want to go to the tourist spots; in fact we actively avoid those areas as much as possible (looking at you Times Square). That being said, in a city so big, how do we find new spots? How do we learn about other local spots to give our business to?</p>
-                    <p>No need to fear, just like Spiderman, The LOCAL NYC is here to fight for us little guys!</p>
-                    <p>To use the LOCAL NYC:</p>
+                    <p>No need to fear, just like Spiderman, LOCAL NYC is here to fight for us little guys!</p>
+                    <p>To use LOCAL NYC:</p>
                     <ol>
                         <li>Log in (or register if you don't have an account)</li>
                         <li>After you log in you will be brought to your profile page where you can edit your profile and see all of your recommendations</li>

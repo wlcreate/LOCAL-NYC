@@ -38,16 +38,16 @@ class LogInForm extends React.Component {
         let {username, password} = this.state
         return(
            <form class="home" onSubmit={this.handleSubmit}>
-               <h1 class="home form name">Log In Form</h1>
-               <label htmlFor="username">Username</label>
-               <input type="text" autoComplete="off"
+               <h1 class="home form name">Log In</h1>
+               <label class="home-label" htmlFor="username">Username</label>
+               <input class="home-input" type="text" autoComplete="off"
                     name="username"
                     value={username}
                     onChange={this.handleChange}
                 />
                 <br></br>
-                <label htmlFor="password">Password</label>
-               <input class="home input" type="password" autoComplete="off"
+                <label class="home-label" htmlFor="password">Password</label>
+               <input class="home-input" type="password" autoComplete="off"
                     name="password"
                     value={password}
                     onChange={this.handleChange}

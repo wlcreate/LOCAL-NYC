@@ -25,7 +25,7 @@ class ProfileContainer extends React.Component{
         // debugger
         let {full_name, username, bio} = this.state
         return(
-            <div>
+            <div id="profile-page">
                 <h1>{username}</h1>
                 <p>{full_name}</p>
                 <p>{bio}</p>

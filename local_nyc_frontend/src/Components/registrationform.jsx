@@ -40,30 +40,30 @@ class RegistrationForm extends React.Component {
         let {first_name, last_name, username, password} = this.state
         return(
             <form class="home" onSubmit={this.handleSubmit}>
-                <h1 class="home form name">Registration Form</h1>
-                <label htmlFor="first_name">First Name</label>
-                <input type="text" autoComplete="off" 
+                <h1 class="home form name">Register</h1>
+                <label class="home-label" htmlFor="first_name">First Name</label>
+                <input class="home-input" type="text" autoComplete="off" 
                     name="first_name"
                     value={first_name}
                     onChange={this.handleChange}
                 />
                 <br></br>
-                <label htmlFor="last_name">Last Name</label>
-                <input class="home input" type="text" autoComplete="off" 
+                <label class="home-label" htmlFor="last_name">Last Name</label>
+                <input class="home-input" type="text" autoComplete="off" 
                     name="last_name"
                     value={last_name}
                     onChange={this.handleChange}
                 />
                 <br></br>
-                <label htmlFor="username">Username</label>
-               <input class="home input" type="text" autoComplete="off"
+                <label class="home-label" htmlFor="username">Username</label>
+               <input class="home-input" type="text" autoComplete="off"
                     name="username"
                     value={username}
                     onChange={this.handleChange}
                 />
                 <br></br>
-                <label htmlFor="password">Password</label>
-               <input class="home input" type="password" autoComplete="off"
+                <label class="home-label" htmlFor="password">Password</label>
+               <input class="home-input" type="password" autoComplete="off"
                     name="password"
                     value={password}
                     onChange={this.handleChange}

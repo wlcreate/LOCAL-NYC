@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import Header from './Components/Home/Header.jsx';
-import Navbar from './Components/navbar.jsx';
-import NewNavBar from './Components/NewNavBar.jsx';
+import NavBar from './Components/NavBar.jsx';
+// import NewNavBar from './Components/NotUsing/NewNavBar.jsx';
 import {Switch, Route, withRouter, Redirect} from 'react-router-dom';
 import LogInForm from './Components/loginform.jsx';
 import Home from './Components/Home/Home.jsx';
@@ -163,9 +162,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header"> 
-        <Navbar token={this.state.token} handleLogOut={this.handleLogOut}/>
-        </header>
+        <NavBar token={this.state.token} handleLogOut={this.handleLogOut}/>
         <Switch> 
           <Route path="/" exact component={Home}/>
           <Route path="/login" render={this.renderForm}/>

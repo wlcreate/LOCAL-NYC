@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 class HomeCarousel extends React.Component {
    render() {
         return (
-         <Carousel id="home-carousel">
+         <Carousel>
          <div>
              <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60" alt="image 1" />
              {/* <p className="legend">Legend 1</p> */}

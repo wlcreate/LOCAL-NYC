@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 
-const Navbar = (props) => {
+const NavBar = (props) => {
 
     let handleClick = () => {
         props.handleLogOut()
@@ -25,9 +25,11 @@ const Navbar = (props) => {
                     <li>
                         <NavLink to="/neighborhoods">Neighborhoods</NavLink>
                     </li>
-                    <li onClick={handleClick}>
-                        <NavLink to="/">Log Out</NavLink>
-                    </li>
+                    <div className="nav-right">
+                        <li onClick={handleClick}>
+                            <NavLink to="/">Log Out</NavLink>
+                        </li>
+                    </div>
                 </ul>
                 :
                 <ul className="nav">
@@ -37,12 +39,14 @@ const Navbar = (props) => {
                     <li>
                         <NavLink to="/">Home</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/login">Log In</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/register">Register</NavLink>
-                    </li>
+                    <div className="nav-right">
+                        <li>
+                            <NavLink to="/login">Log In</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/register">Register</NavLink>
+                        </li>
+                    </div>
                 </ul>
             }
             {/* <ul className="nav">
@@ -68,4 +72,4 @@ const Navbar = (props) => {
     )
 }
 
-export default Navbar;
+export default NavBar;
