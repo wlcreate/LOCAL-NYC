@@ -176,37 +176,58 @@ img.neighborhoods {
 /* Spots Container */
 #spotName {
   text-align: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 #spot-container {
-  text-align: center;
-  width: 200px;
-  margin: auto;
+  /* makes the search bar and filter side by side */
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
 }
 
-/*
+
 #spot-search {
-  width: 100px;
   float: left;
-  height: 300px;
+  /* margin-left: 34%; */
+  margin-right: 12px;
 }
-*/
+
+#search-name-label, #filter-category-label {
+  display: inline-block;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+#search-name-input, #filter-category-select {
+  outline: none;
+  border-radius: 4px;
+}
 
 #category-filter {
-  align-self: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  /* margin-top: 10px; */
+  margin-bottom: 15px;
+  /* float: left; */
+}
+
+#spot-modal {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
 }
 
 #spot {
-  padding-top: 50px;
-  padding-right: 75px;
-  padding-bottom: 50px;
-  padding-left: 80px;
+  padding-top: 40px;
+  padding-right: 50px;
+  padding-bottom: 40px;
+  padding-left: 60px;
 }
 
 #spot:hover {
-  background-color: rgb(255, 208, 147);
+  background-color: #24699C;
 }
 
 /* Spot Recommendation Container */

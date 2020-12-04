@@ -170,7 +170,7 @@ class Spots extends React.Component{
         })
 
         return(
-            <div>
+            <div id="spots-page">
                 <h1 id="spotName">{this.state.neighborhood}</h1>
                 <div id="spot-container">
                     <div id="spot-search">
@@ -180,10 +180,10 @@ class Spots extends React.Component{
                         <CategoryFilter selectedCategory={this.state.selectedCategory} changeSelectedCategory={this.changeSelectedCategory}/>
                     </div>
                 </div>
+                    <SpotModal neighborhood_id={this.props.neighborhood_id} addSpotToState={this.addSpotToState}/>
                 <div>
                     <SpotsContainer spots={this.findSpots()} changeSpotID={this.props.changeSpotID}/>
                 </div>
-                <SpotModal neighborhood_id={this.props.neighborhood_id} addSpotToState={this.addSpotToState}/>
             </div>
         )
     }

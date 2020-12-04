@@ -10,8 +10,8 @@ const SpotsSearch = (props) => {
     return(
         <>
         <form>
-            <p><strong>Search for a spot by name!</strong></p>
-            <input type="text" value={props.searchTerm} onChange={handleChange}/>
+            <p id="search-name-label"><strong>Search by name</strong></p>
+            <input id="search-name-input" type="text" value={props.searchTerm} onChange={handleChange}/>
         </form>
         </>
     )

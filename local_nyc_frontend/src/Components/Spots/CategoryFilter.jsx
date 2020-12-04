@@ -8,8 +8,8 @@ const CategoryFilter = (props) => {
 
     return (
         <div>
-            <p><strong>Filter for a spot by category!</strong></p>
-            <select value={props.selectedCategory} onChange={handleChange}>
+            <p id="filter-category-label"><strong>Filter by category</strong></p>
+            <select id="filter-category-select" value={props.selectedCategory} onChange={handleChange}>
                 <option value={"All"}>All</option>
                 <option value={"Bar"}>Bar</option>
                 <option value={"Coffee & Tea"}>Coffee and Tea</option>

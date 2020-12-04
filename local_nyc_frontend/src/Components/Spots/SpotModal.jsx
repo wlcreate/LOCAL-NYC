@@ -41,7 +41,7 @@ function SpotModal(props) {
 
     return (
         <>
-        <Button variant="primary" onClick={handleShow}>
+        <Button id="spot-modal" variant="primary" onClick={handleShow}>
             Add a Spot
         </Button>
 

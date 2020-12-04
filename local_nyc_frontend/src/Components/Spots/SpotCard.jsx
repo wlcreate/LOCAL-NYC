@@ -15,7 +15,11 @@ class SpotCard extends React.Component{
 
         return(
             <div class="ui raised card" id="spot">
-                <NavLink to={path} onClick={this.handleClick}>{name}</NavLink>
+                <NavLink to={path} onClick={this.handleClick}>
+                    <div class="center aligned header">
+                        {name}
+                    </div>
+                </NavLink>
             </div>
         )
     }
