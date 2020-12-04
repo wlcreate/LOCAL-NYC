@@ -49,119 +49,136 @@ class Spots extends React.Component{
         })
     }     
 
-    // ! Cannot choose a category -> search; can only search -> category
+    
     findSpots = () => {
         if (this.state.spots !== [] && this.state.selectedCategory === "All"){
             let searchedSpots = this.state.spots.filter(spot => {
                 return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
             })
             return searchedSpots
-        } else if (this.state.spots !== [] && this.state.selectedCategory === "Bar"){
-            let categorizedSpots = this.state.spots.filter(spot => {
-                return spot.category.name === this.state.selectedCategory
+        } else if (this.state.spots !== [] && this.state.selectedCategory !== "All"){
+            let searchedSpots = this.state.spots.filter(spot => {
+                // debugger
+                return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase()) && spot.category.name === this.state.selectedCategory
             })
-            categorizedSpots.filter(spot => {
-                return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-            })
-            return categorizedSpots
-        } else if (this.state.spots !== [] && this.state.selectedCategory === "Coffee & Tea"){
-            let categorizedSpots = this.state.spots.filter(spot => {
-                return spot.category.name === this.state.selectedCategory
-            })
-            categorizedSpots.filter(spot => {
-                return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-            })
-            return categorizedSpots
-        } else if (this.state.spots !== [] && this.state.selectedCategory === "Cultural Center"){
-            let categorizedSpots = this.state.spots.filter(spot => {
-                return spot.category.name === this.state.selectedCategory
-            })
-            categorizedSpots.filter(spot => {
-                return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-            })
-            return categorizedSpots
-        } else if (this.state.spots !== [] && this.state.selectedCategory === "Dog Park"){
-            let categorizedSpots = this.state.spots.filter(spot => {
-                return spot.category.name === this.state.selectedCategory
-            })
-            categorizedSpots.filter(spot => {
-                return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-            })
-            return categorizedSpots
-        } else if (this.state.spots !== [] && this.state.selectedCategory === "Live Music Venue"){
-            let categorizedSpots = this.state.spots.filter(spot => {
-                return spot.category.name === this.state.selectedCategory
-            })
-            categorizedSpots.filter(spot => {
-                return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-            })
-            return categorizedSpots
-        } else if (this.state.spots !== [] && this.state.selectedCategory === "Museum"){
-            let categorizedSpots = this.state.spots.filter(spot => {
-                return spot.category.name === this.state.selectedCategory
-            })
-            categorizedSpots.filter(spot => {
-                return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-            })
-            return categorizedSpots
-        } else if (this.state.spots !== [] && this.state.selectedCategory === "Observation Deck"){
-            let categorizedSpots = this.state.spots.filter(spot => {
-                return spot.category.name === this.state.selectedCategory
-            })
-            categorizedSpots.filter(spot => {
-                return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-            })
-            return categorizedSpots
-        } else if (this.state.spots !== [] && this.state.selectedCategory === "Park"){
-            let categorizedSpots = this.state.spots.filter(spot => {
-                return spot.category.name === this.state.selectedCategory
-            })
-            categorizedSpots.filter(spot => {
-                return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-            })
-            return categorizedSpots
-        } else if (this.state.spots !== [] && this.state.selectedCategory === "Performing Arts Venue"){
-            let categorizedSpots = this.state.spots.filter(spot => {
-                return spot.category.name === this.state.selectedCategory
-            })
-            categorizedSpots.filter(spot => {
-                return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-            })
-            return categorizedSpots
-        } else if (this.state.spots !== [] && this.state.selectedCategory === "Restaurant"){
-            let categorizedSpots = this.state.spots.filter(spot => {
-                return spot.category.name === this.state.selectedCategory
-            })
-            categorizedSpots.filter(spot => {
-                return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-            })
-            return categorizedSpots
-        } else if (this.state.spots !== [] && this.state.selectedCategory === "Rock Climbing Gym"){
-            let categorizedSpots = this.state.spots.filter(spot => {
-                return spot.category.name === "Rock-climbing Gym"
-            })
-            categorizedSpots.filter(spot => {
-                return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-            })
-            return categorizedSpots
-        } else if (this.state.spots !== [] && this.state.selectedCategory === "Shopping"){
-            let categorizedSpots = this.state.spots.filter(spot => {
-                return spot.category.name === this.state.selectedCategory
-            })
-            categorizedSpots.filter(spot => {
-                return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-            })
-            return categorizedSpots
-        } else if (this.state.spots !== [] && this.state.selectedCategory === "Zoo"){
-            let categorizedSpots = this.state.spots.filter(spot => {
-                return spot.category.name === this.state.selectedCategory
-            })
-            categorizedSpots.filter(spot => {
-                return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-            })
-            return categorizedSpots
-        } 
+            // console.log(searchedSpots)
+            return searchedSpots
+        }
     }
+
+    // ! Cannot choose a category -> search; can only search -> category
+    // findSpots = () => {
+    //     if (this.state.spots !== [] && this.state.selectedCategory === "All"){
+    //         let searchedSpots = this.state.spots.filter(spot => {
+    //             return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    //         })
+    //         return searchedSpots
+    //     } else if (this.state.spots !== [] && this.state.selectedCategory === "Bar"){
+    //         let categorizedSpots = this.state.spots.filter(spot => {
+    //             return spot.category.name === this.state.selectedCategory
+    //         })
+    //         categorizedSpots.filter(spot => {
+    //             return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    //         })
+    //         return categorizedSpots
+    //     } else if (this.state.spots !== [] && this.state.selectedCategory === "Coffee & Tea"){
+    //         let categorizedSpots = this.state.spots.filter(spot => {
+    //             return spot.category.name === this.state.selectedCategory
+    //         })
+    //         categorizedSpots.filter(spot => {
+    //             return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    //         })
+    //         return categorizedSpots
+    //     } else if (this.state.spots !== [] && this.state.selectedCategory === "Cultural Center"){
+    //         let categorizedSpots = this.state.spots.filter(spot => {
+    //             return spot.category.name === this.state.selectedCategory
+    //         })
+    //         categorizedSpots.filter(spot => {
+    //             return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    //         })
+    //         return categorizedSpots
+    //     } else if (this.state.spots !== [] && this.state.selectedCategory === "Dog Park"){
+    //         let categorizedSpots = this.state.spots.filter(spot => {
+    //             return spot.category.name === this.state.selectedCategory
+    //         })
+    //         categorizedSpots.filter(spot => {
+    //             return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    //         })
+    //         return categorizedSpots
+    //     } else if (this.state.spots !== [] && this.state.selectedCategory === "Live Music Venue"){
+    //         let categorizedSpots = this.state.spots.filter(spot => {
+    //             return spot.category.name === this.state.selectedCategory
+    //         })
+    //         categorizedSpots.filter(spot => {
+    //             return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    //         })
+    //         return categorizedSpots
+    //     } else if (this.state.spots !== [] && this.state.selectedCategory === "Museum"){
+    //         let categorizedSpots = this.state.spots.filter(spot => {
+    //             return spot.category.name === this.state.selectedCategory
+    //         })
+    //         categorizedSpots.filter(spot => {
+    //             return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    //         })
+    //         return categorizedSpots
+    //     } else if (this.state.spots !== [] && this.state.selectedCategory === "Observation Deck"){
+    //         let categorizedSpots = this.state.spots.filter(spot => {
+    //             return spot.category.name === this.state.selectedCategory
+    //         })
+    //         categorizedSpots.filter(spot => {
+    //             return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    //         })
+    //         return categorizedSpots
+    //     } else if (this.state.spots !== [] && this.state.selectedCategory === "Park"){
+    //         let categorizedSpots = this.state.spots.filter(spot => {
+    //             return spot.category.name === this.state.selectedCategory
+    //         })
+    //         categorizedSpots.filter(spot => {
+    //             return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    //         })
+    //         return categorizedSpots
+    //     } else if (this.state.spots !== [] && this.state.selectedCategory === "Performing Arts Venue"){
+    //         let categorizedSpots = this.state.spots.filter(spot => {
+    //             return spot.category.name === this.state.selectedCategory
+    //         })
+    //         categorizedSpots.filter(spot => {
+    //             return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    //         })
+    //         return categorizedSpots
+    //     } else if (this.state.spots !== [] && this.state.selectedCategory === "Restaurant"){
+    //         let categorizedSpots = this.state.spots.filter(spot => {
+    //             return spot.category.name === this.state.selectedCategory
+    //         })
+    //         categorizedSpots.filter(spot => {
+    //             return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    //         })
+    //         return categorizedSpots
+    //     } else if (this.state.spots !== [] && this.state.selectedCategory === "Rock Climbing Gym"){
+    //         let categorizedSpots = this.state.spots.filter(spot => {
+    //             return spot.category.name === "Rock-climbing Gym"
+    //         })
+    //         categorizedSpots.filter(spot => {
+    //             return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    //         })
+    //         return categorizedSpots
+    //     } else if (this.state.spots !== [] && this.state.selectedCategory === "Shopping"){
+    //         let categorizedSpots = this.state.spots.filter(spot => {
+    //             return spot.category.name === this.state.selectedCategory
+    //         })
+    //         categorizedSpots.filter(spot => {
+    //             return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    //         })
+    //         return categorizedSpots
+    //     } else if (this.state.spots !== [] && this.state.selectedCategory === "Zoo"){
+    //         let categorizedSpots = this.state.spots.filter(spot => {
+    //             return spot.category.name === this.state.selectedCategory
+    //         })
+    //         categorizedSpots.filter(spot => {
+    //             return spot.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    //         })
+    //         return categorizedSpots
+    //     } 
+    // }
 
     render(){
 
