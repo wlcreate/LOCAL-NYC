@@ -51,8 +51,8 @@ function SpotModal(props) {
             </Modal.Header>
             <Modal.Body>
             <form onSubmit={handleSubmit}>
-                    <label htmlFor="category">Category</label>
-                    <select value={category} onChange={e => {setCategory(e.target.value)}}>
+                    <label id="spot-label" htmlFor="category">Category</label>
+                    <select id="spot-input" value={category} onChange={e => {setCategory(e.target.value)}}>
                         <option value={"Bar"}>Bar</option>
                         <option value={"Coffee & Tea"}>Coffee and Tea</option>
                         <option value={"Cultural Center"}>Cultural Center</option>
@@ -68,28 +68,28 @@ function SpotModal(props) {
                         <option value={"Zoo"}>Zoo</option>
                     </select>
                     <br></br>
-                    <label htmlFor="name">Name of Spot</label>
-                    <input type="text" autoComplete="off"
+                    <label id="spot-label" htmlFor="name">Name of Spot</label>
+                    <input id="spot-input" type="text" autoComplete="off"
                         name="name"
                         value={name}
                         onChange={e => {setName(e.target.value)}}
                     />
                     <br></br>
-                    <label htmlFor="address">Address</label>
-                    <input type="text" autoComplete="off"
+                    <label id="spot-label" htmlFor="address">Address</label>
+                    <input id="spot-input" type="text" autoComplete="off"
                         name="address"
                         value={address}
                         onChange={e => {setAddress(e.target.value)}}
                     />
                     <br></br>
-                    <label htmlFor="info">Info</label>
-                    <input type="text" autoComplete="off"
+                    <label id="spot-label" htmlFor="info">Info</label>
+                    <textarea id="spot-info-input" type="text" autoComplete="off"
                         name="info"
                         value={info}
                         onChange={e => {setInfo(e.target.value)}}
                     />
                     <br></br>
-                    <input type="submit" value="Submit"/>
+                    <input id="spot-submit" type="submit" value="Submit"/>
                 </form>
             </Modal.Body>
         </Modal>

@@ -54,36 +54,36 @@ function ProfileModal(props) {
             </Modal.Header>
             <Modal.Body>
             <form onSubmit={handleSubmit}> 
-                    <label class="home-label" htmlFor="username">Username</label>
-                    <input class="home-input" type="text" autoComplete="off"
+                    <label id="profile-label" htmlFor="username">Username</label>
+                    <input id="profile-input" type="text" autoComplete="off"
                         name="username"
                         value={username}
                         onChange={e => {setUsername(e.target.value)}}
                     />
                     <br></br>
-                    <label class="home-label" htmlFor="first_name">First name</label>
-                    <input class="home-input" type="text" autoComplete="off"
+                    <label id="profile-label" htmlFor="first_name">First name</label>
+                    <input id="profile-input" type="text" autoComplete="off"
                         name="first_name"
                         value={first_name}
                         onChange={e => {setFirstName(e.target.value)}}
                     />
                     <br></br>
-                    <label class="home-label" htmlFor="last_name">Last name</label>
-                    <input class="home-input" type="text" autoComplete="off"
+                    <label id="profile-label" htmlFor="last_name">Last name</label>
+                    <input id="profile-input" type="text" autoComplete="off"
                         name="last_name"
                         value={last_name}
                         onChange={e => {setLastName(e.target.value)}}
                     />
                     <br></br>
-                    <label class="home-label" htmlFor="bio">Bio</label>
-                    <input class="home-input" type="text" autoComplete="off"
+                    <label id="profile-label" htmlFor="bio">Bio</label>
+                    <textarea id="profile-bio-input" type="text" autoComplete="off"
                         name="bio"
                         value={bio}
                         onChange={e => {setBio(e.target.value)}}
                     />
                     <br></br>
-                    <label class="home-label" htmlFor="password">Password</label>
-                    <input class="home-input" type="password" autoComplete="off"
+                    <label id="profile-label" htmlFor="password">Password</label>
+                    <input id="profile-input" type="password" autoComplete="off"
                         name="password"
                         value={password}
                         onChange={e => {setPassword(e.target.value)}}
