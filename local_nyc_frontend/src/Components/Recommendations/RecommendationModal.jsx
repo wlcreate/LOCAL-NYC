@@ -48,14 +48,14 @@ function RecommendationModal(props) {
             </Modal.Header>
             <Modal.Body>
             <form onSubmit={handleSubmit}> 
-                    <label htmlFor="context">Your Recommendation</label>
-                    <input type="text" autoComplete="off"
+                    <label id="recommendation-label" htmlFor="context">What do you recommend?</label>
+                    <textarea id="recommendation-input" type="text" autoComplete="off"
                         name="context"
                         value={context}
                         onChange={e => {setContext(e.target.value)}}
                     />
                     <br></br>
-                    <input type="submit" value="Submit"/>
+                    <input id="recommendation-submit" type="submit" value="Submit"/>
                 </form>
             </Modal.Body>
         </Modal>

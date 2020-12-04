@@ -76,17 +76,21 @@ class SpotContainer extends React.Component{
         })
 
         return(
-            <div>
+            <div id="spot-page">
                 {/* <h1>This is the Spot Component</h1> */}
-                <h2>{this.state.spot.name}</h2>
-                <h3>{this.state.spot.address}</h3>
+                <div id="spot-info">
+                    <h2>{this.state.spot.name}</h2>
+                    <p>{this.state.spot.address}</p>
+                    <RecommendationModal user_id={this.props.user.id} spot_id={this.state.spot.id} addRecommendationToState={this.addRecommendationToState}/>
+                </div>
                 <ul>
                     {/* {this.handleInfo()} */}
                 </ul>
-                <h2>Recommendations</h2>
-                {arrayOfRecComponents}
-                {/* <RecommendationsContainer neighborhood_id={this.props.neighborhood_id} spot_id={this.props.spot_id} spot={this.state.spot}/> */}
-                <RecommendationModal user_id={this.props.user.id} spot_id={this.state.spot.id} addRecommendationToState={this.addRecommendationToState}/>
+                <div id="spot-recommendations">
+                    <h2 id="spot-recommendation-h2">Recommendations</h2>
+                    {arrayOfRecComponents}
+                    {/* <RecommendationsContainer neighborhood_id={this.props.neighborhood_id} spot_id={this.props.spot_id} spot={this.state.spot}/> */}
+                </div>
             </div>
         )
     }

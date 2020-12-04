@@ -18,7 +18,7 @@ class SpotRecommendation extends React.Component{
         let {context} = this.props.recommendation
         let {username} = this.props.recommendation.user
         return(
-            <div>
+            <div id="spot-recommendation">
                 <p>{context}</p>
                 <p>User: {username}</p>
                 <div id="delete-recommendation">
