@@ -1,5 +1,5 @@
 # LOCAL NYC
-LOCAL NYC is a web application (built with React for the frontend and Rails API for the backend) that allows locals from NYC to share and explore other users' favorite spots in NYC. Spots are based in the five boroughs and shown based on the neighborhood they are located in. Users can add what they recommend about a spot and if they don't see one listed, can add a spot as well. 
+LOCAL NYC is a web application that allows locals from NYC to share and explore other users' favorite spots in NYC. Spots are based in the five boroughs and shown based on the neighborhood they are located in. Users can add what they recommend about a spot and if they don't see one listed, can add a spot as well. 
 
 [Link to backend](https://github.com/wlcreate/Mod4_Project_backend)
 
