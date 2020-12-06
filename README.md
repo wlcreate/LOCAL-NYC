@@ -3,6 +3,8 @@ LOCAL NYC is a web application that allows locals from NYC to share and explore 
 
 [Link to backend](https://github.com/wlcreate/Mod4_Project_backend)
 
+[Link to video demo](https://youtu.be/954c0xCiL9U)
+
 ## Getting Started
 1. Clone down the [Rails backend](https://github.com/wlcreate/Mod4_Project_backend) --git clone
 2. Clone down this repo into local machine --git clone
